@@ -1,0 +1,41 @@
+ward_id,ward_name,hospital,lhd,bed_capacity
+1,Intensive Care - Royal Prince Al,Royal Prince Alfred Hospital,Sydney,11
+2,Emergency Department - Royal Prince Al,Royal Prince Alfred Hospital,Sydney,34
+3,Orthopaedic Ward - Royal Prince Al,Royal Prince Alfred Hospital,Sydney,28
+4,Coronary Care - Royal Prince Al,Royal Prince Alfred Hospital,Sydney,67
+5,Intensive Care - Liverpool Hospi,Liverpool Hospital,South Western Sydney,9
+6,Orthopaedic Ward - Liverpool Hospi,Liverpool Hospital,South Western Sydney,57
+7,Paediatric Ward - Liverpool Hospi,Liverpool Hospital,South Western Sydney,47
+8,Surgical Ward - Liverpool Hospi,Liverpool Hospital,South Western Sydney,22
+9,Emergency Department - Prince of Wales,Prince of Wales Hospital,South Eastern Sydney,52
+10,Maternity Ward - Prince of Wales,Prince of Wales Hospital,South Eastern Sydney,58
+11,Intensive Care - Prince of Wales,Prince of Wales Hospital,South Eastern Sydney,8
+12,Orthopaedic Ward - Prince of Wales,Prince of Wales Hospital,South Eastern Sydney,55
+13,Medical Ward - Westmead Hospit,Westmead Hospital,Western Sydney,46
+14,Orthopaedic Ward - Westmead Hospit,Westmead Hospital,Western Sydney,34
+15,Paediatric Ward - Westmead Hospit,Westmead Hospital,Western Sydney,48
+16,Surgical Ward - Westmead Hospit,Westmead Hospital,Western Sydney,57
+17,Surgical Ward - Gosford Hospita,Gosford Hospital,Central Coast,64
+18,Paediatric Ward - Gosford Hospita,Gosford Hospital,Central Coast,47
+19,Emergency Department - Gosford Hospita,Gosford Hospital,Central Coast,41
+20,Intensive Care - Gosford Hospita,Gosford Hospital,Central Coast,12
+21,Coronary Care - St George Hospi,St George Hospital,South Eastern Sydney,25
+22,Intensive Care - St George Hospi,St George Hospital,South Eastern Sydney,14
+23,Maternity Ward - St George Hospi,St George Hospital,South Eastern Sydney,26
+24,Emergency Department - St George Hospi,St George Hospital,South Eastern Sydney,42
+25,Orthopaedic Ward - Blacktown Hospi,Blacktown Hospital,Western Sydney,66
+26,Surgical Ward - Blacktown Hospi,Blacktown Hospital,Western Sydney,49
+27,Coronary Care - Blacktown Hospi,Blacktown Hospital,Western Sydney,54
+28,Emergency Department - Blacktown Hospi,Blacktown Hospital,Western Sydney,27
+29,Paediatric Ward - Sutherland Hosp,Sutherland Hospital,South Eastern Sydney,73
+30,Emergency Department - Sutherland Hosp,Sutherland Hospital,South Eastern Sydney,60
+31,Surgical Ward - Sutherland Hosp,Sutherland Hospital,South Eastern Sydney,59
+32,Coronary Care - Sutherland Hosp,Sutherland Hospital,South Eastern Sydney,76
+33,Orthopaedic Ward - Campbelltown Ho,Campbelltown Hospital,South Western Sydney,22
+34,Surgical Ward - Campbelltown Ho,Campbelltown Hospital,South Western Sydney,62
+35,Intensive Care - Campbelltown Ho,Campbelltown Hospital,South Western Sydney,11
+36,Emergency Department - Campbelltown Ho,Campbelltown Hospital,South Western Sydney,69
+37,Surgical Ward - Royal North Sho,Royal North Shore Hospital,Sydney,44
+38,Emergency Department - Royal North Sho,Royal North Shore Hospital,Sydney,37
+39,Intensive Care - Royal North Sho,Royal North Shore Hospital,Sydney,15
+40,Paediatric Ward - Royal North Sho,Royal North Shore Hospital,Sydney,60
