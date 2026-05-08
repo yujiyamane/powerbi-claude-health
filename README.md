@@ -1,4 +1,4 @@
-# Power BI × Claude Code - NSW Health Dashboard
+# Power BI × Claude Code - Statewide Health Dashboard
 ## Enterprise BI Dashboard Built in 4 Hours
 
 > **🎯 Concept**: Transform a 2-week enterprise BI dashboard project into a 4-hour development sprint using Claude Code
@@ -11,13 +11,13 @@
 
 ## 📊 Project Overview
 
-Healthcare KPI dashboard modeled after NSW Health (New South Wales Health Department) workflows, demonstrating **ultra-fast development through Claude Code AI assistance**.
+Healthcare KPI dashboard modeled after Statewide Health (New South Wales Health Department) workflows, demonstrating **ultra-fast development through Claude Code AI assistance**.
 
 ### 🎯 Objectives
 - **Development Time**: 15 days → **4 hours** (97% reduction)
 - **Data Scale**: 200,000 admission records across 2 years
 - **Technical Quality**: Production-ready, Performance-optimized
-- **Industry Compliance**: AIHW standards, NSW Health specifications
+- **Industry Compliance**: AIHW standards, Statewide Health specifications
 
 ### 💡 Technical Stack
 ```
@@ -35,7 +35,7 @@ AI Assistant: Claude Code (Architecture + Implementation)
 - **🛏️ Bed Occupancy Rate**: Resource utilization efficiency (target: 80-90%)
 - **📅 Average Length of Stay (ALOS)**: Treatment efficiency indicator
 - **⏱️ ED Wait Time Median**: Emergency medical responsiveness
-- **✅ 4-Hour Rule Compliance**: NSW Health policy adherence (target: 90%+)
+- **✅ 4-Hour Rule Compliance**: Statewide Health policy adherence (target: 90%+)
 - **💰 Cost per Admission**: Cost efficiency metric
 
 ### Dashboard Pages
@@ -125,7 +125,7 @@ powerbi-claude-health/
 
 #### 1. **Instant Domain Expertise Application**
 ```
-Prompt: "Design KPIs based on NSW Health workflows with AIHW standard compliance"
+Prompt: "Design KPIs based on Statewide Health workflows with AIHW standard compliance"
 Result: Immediate application of Australian healthcare industry standards
 ```
 
@@ -180,7 +180,7 @@ Clinical → Patient flow → Resource optimization
 ```
 
 ### 2. **Color Palette**
-- **Primary**: NSW Health blue (`#003087`)
+- **Primary**: Statewide Health blue (`#003087`)
 - **Secondary**: Teal (`#009B77`) for positive KPIs
 - **Alert**: Amber (`#F7931E`) and Red (`#E31B23`) for warnings
 - **Neutral**: Grey shades for supporting data

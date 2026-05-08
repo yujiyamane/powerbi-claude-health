@@ -2,7 +2,7 @@
 
 ## 🎯 Project Overview
 
-**Challenge**: NSW Health KPI Dashboard Development
+**Challenge**: Statewide Health KPI Dashboard Development
 **Complexity**: Star schema design, 200K records, complex DAX, 4-page dashboard
 **Target**: Production-level completion and performance
 
@@ -78,7 +78,7 @@
 ### 1. Requirements Understanding & Architecture Design
 **Claude Code**: Intelligent domain understanding
 ```bash
-✅ NSW Health business understanding (5 minutes)
+✅ Statewide Health business understanding (5 minutes)
 ✅ AIHW standard KPI automatic interpretation (5 minutes)
 ✅ Best practice Star schema generation (10 minutes)
 ✅ Performance-optimized design (10 minutes)
@@ -119,7 +119,7 @@
 ### 4. Dashboard Design & UX
 **Claude Code**: UX-driven dashboard design
 ```powerbi
-✅ NSW Health brand-compliant design (30 minutes)
+✅ Statewide Health brand-compliant design (30 minutes)
 ✅ Executive/Operational view separation (30 minutes)
 ✅ Mobile-first responsive layout (30 minutes)
 ✅ Accessibility compliance (30 minutes)

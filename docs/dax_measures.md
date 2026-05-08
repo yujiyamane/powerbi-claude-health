@@ -1,6 +1,6 @@
-# DAX Measures - NSW Health KPI Dashboard
+# DAX Measures - Statewide Health KPI Dashboard
 
-This document provides definitions and explanations for DAX measures used in the NSW Health KPI Dashboard.
+This document provides definitions and explanations for DAX measures used in the Statewide Health KPI Dashboard.
 
 ## Core KPI Measures
 
@@ -31,7 +31,7 @@ SUMX(
 ```
 
 **Purpose**: Measure bed resource utilization efficiency
-**Target**: 80-90% (NSW Health standard)
+**Target**: 80-90% (Statewide Health standard)
 
 ### 2. Average Length of Stay (ALOS)
 
@@ -96,7 +96,7 @@ RETURN
     [4-Hour Rule Compliance] * 100
 ```
 
-**Purpose**: NSW Health 4-hour rule policy achievement
+**Purpose**: Statewide Health 4-hour rule policy achievement
 **Target**: ≥ 90%
 
 ### 5. Cost per Admission

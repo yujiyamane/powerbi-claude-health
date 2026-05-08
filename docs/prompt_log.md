@@ -1,6 +1,6 @@
-# Prompt Engineering Log - NSW Health BI Dashboard
+# Prompt Engineering Log - Statewide Health BI Dashboard
 
-This file records the actual prompts and responses when using Claude Code to build the NSW Health KPI Dashboard.
+This file records the actual prompts and responses when using Claude Code to build the Statewide Health KPI Dashboard.
 
 ---
 
@@ -9,7 +9,7 @@ This file records the actual prompts and responses when using Claude Code to bui
 
 ### Prompt 1.1: Project Overview Description
 ```
-I want to build a healthcare KPI dashboard for NSW Health with the following requirements:
+I want to build a healthcare KPI dashboard for Statewide Health with the following requirements:
 
 - 10 hospitals across 5 Local Health Districts
 - Need bed occupancy rate, average length of stay, ED wait time, 4-hour rule compliance
@@ -21,7 +21,7 @@ I want to create a dashboard that complies with Australian healthcare industry s
 ```
 
 **Claude Response Summary**:
-- NSW Health business understanding confirmation
+- Statewide Health business understanding confirmation
 - AIHW (Australian Institute of Health and Welfare) standard KPI compliance
 - Star schema design proposal
 - Data generation strategy planning
@@ -153,7 +153,7 @@ Page 2: ED Performance (emergency department details)
 Page 3: Ward & Bed Management (ward management)
 Page 4: Cost Analysis (cost analysis)
 
-Define visual placement, color palette, and filtering strategy for each page. Consider NSW Health branding.
+Define visual placement, color palette, and filtering strategy for each page. Consider Statewide Health branding.
 ```
 
 **Claude Response Summary**:
@@ -236,7 +236,7 @@ Cover all information necessary for production support.
 
 #### 1. Context-Rich Prompts
 ```
-Good: "Based on NSW Health business understanding, design AIHW standard-compliant..."
+Good: "Based on Statewide Health business understanding, design AIHW standard-compliant..."
 Bad: "Create a healthcare dashboard"
 ```
 
@@ -292,7 +292,7 @@ Create dummy data
 
 **After**:
 ```
-Generate NSW Health business-specific dummy data. Requirements:
+Generate Statewide Health business-specific dummy data. Requirements:
 - Reflect Australian population statistics
 - Apply seasonal health patterns
 - Realistic triage distribution
@@ -310,7 +310,7 @@ Create DAX for KPIs
 **After**:
 ```
 Create performance-optimized DAX measures:
-1. NSW Health standard KPI compliance
+1. Statewide Health standard KPI compliance
 2. Error handling with DIVIDE function
 3. Time intelligence pattern application
 4. Variable usage for readability

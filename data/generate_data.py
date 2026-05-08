@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-NSW Health Healthcare KPI Dashboard - Dummy Data Generator
+Statewide Health Healthcare KPI Dashboard - Dummy Data Generator
 
 Generates realistic healthcare data following Australian health system patterns.
 Creates CSV files for Power BI star schema: fact_admissions + dimension tables.
@@ -22,7 +22,7 @@ random.seed(42)
 fake = Faker('en_AU')
 Faker.seed(42)
 
-# Constants for NSW Health system
+# Constants for Statewide Health system
 NSW_LHDS = [
     'Sydney', 'South Eastern Sydney', 'South Western Sydney',
     'Western Sydney', 'Central Coast'
@@ -255,7 +255,7 @@ def generate_fact_admissions(dim_ward, dim_date, dim_patient, target_records=200
 
 def main():
     """Generate all CSV files for Power BI."""
-    print("NSW Health KPI Dashboard - Data Generation")
+    print("Statewide Health KPI Dashboard - Data Generation")
     print("=" * 50)
 
     # Generate dimension tables
