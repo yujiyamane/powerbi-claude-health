@@ -277,18 +277,17 @@ def main():
 
     # Save to CSV
     print(f"\nSaving CSV files...")
-    os.makedirs('output', exist_ok=True)
 
-    dim_ward.to_csv('output/dim_ward.csv', index=False)
+    dim_ward.to_csv('dim_ward.csv', index=False)
     print(f"  [OK] dim_ward.csv ({len(dim_ward):,} rows)")
 
-    dim_date.to_csv('output/dim_date.csv', index=False)
+    dim_date.to_csv('dim_date.csv', index=False)
     print(f"  [OK] dim_date.csv ({len(dim_date):,} rows)")
 
-    dim_patient.to_csv('output/dim_patient.csv', index=False)
+    dim_patient.to_csv('dim_patient.csv', index=False)
     print(f"  [OK] dim_patient.csv ({len(dim_patient):,} rows)")
 
-    fact_admissions.to_csv('output/fact_admissions.csv', index=False)
+    fact_admissions.to_csv('fact_admissions.csv', index=False)
     print(f"  [OK] fact_admissions.csv ({len(fact_admissions):,} rows)")
 
     # Summary statistics
@@ -299,7 +298,7 @@ def main():
     print(f"  * Average ED wait: {fact_admissions[fact_admissions['ed_wait_minutes'] > 0]['ed_wait_minutes'].mean():.0f} minutes")
     print(f"  * Average cost: ${fact_admissions['cost'].mean():,.0f}")
 
-    print(f"\nData generation complete! Files saved in 'output/' directory")
+    print(f"\nData generation complete! Files saved in current directory")
     print("Ready to import into Power BI")
 
 if __name__ == "__main__":

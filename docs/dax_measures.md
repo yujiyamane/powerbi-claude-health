@@ -1,10 +1,10 @@
 # DAX Measures - NSW Health KPI Dashboard
 
-このドキュメントは、NSW Healthヘルスケア KPIダッシュボードで使用されるDAXメジャーの定義と説明を記載します。
+This document provides definitions and explanations for DAX measures used in the NSW Health KPI Dashboard.
 
 ## Core KPI Measures
 
-### 1. 病床稼働率 (Bed Occupancy Rate)
+### 1. Bed Occupancy Rate
 
 ```dax
 Bed Occupancy Rate = 
@@ -30,10 +30,10 @@ SUMX(
 )
 ```
 
-**用途**: 病床リソースの使用効率を測定
-**目標値**: 80-90% (NSW Health標準)
+**Purpose**: Measure bed resource utilization efficiency
+**Target**: 80-90% (NSW Health standard)
 
-### 2. 平均在院日数 (Average Length of Stay - ALOS)
+### 2. Average Length of Stay (ALOS)
 
 ```dax
 ALOS = 
@@ -46,13 +46,13 @@ DIVIDE(
 ) / 24
 ```
 
-**用途**: 治療効率と患者回転率の指標
-**ベンチマーク**: 
-- Emergency Department: < 0.5日
-- Medical Ward: 3-5日
-- Surgical Ward: 2-4日
+**Purpose**: Treatment efficiency and patient turnover indicator
+**Benchmarks**: 
+- Emergency Department: < 0.5 days
+- Medical Ward: 3-5 days
+- Surgical Ward: 2-4 days
 
-### 3. ED待ち時間中央値 (ED Wait Time Median)
+### 3. ED Wait Time Median
 
 ```dax
 ED Wait Time Median = 
@@ -68,10 +68,10 @@ ED Wait Time (Hours) =
     [ED Wait Time Median] / 60
 ```
 
-**用途**: 救急医療サービスの即応性評価
-**目標**: < 240分 (4時間ルール)
+**Purpose**: Emergency medical service responsiveness assessment
+**Target**: < 240 minutes (4-hour rule)
 
-### 4. 4時間ルール達成率 (4-Hour Rule Compliance)
+### 4. 4-Hour Rule Compliance
 
 ```dax
 4-Hour Rule Compliance = 
@@ -96,10 +96,10 @@ RETURN
     [4-Hour Rule Compliance] * 100
 ```
 
-**用途**: NSW Health 4時間ルール政策の達成度
-**目標値**: ≥ 90%
+**Purpose**: NSW Health 4-hour rule policy achievement
+**Target**: ≥ 90%
 
-### 5. 1入院当たりコスト (Cost per Admission)
+### 5. Cost per Admission
 
 ```dax
 Cost per Admission = 
@@ -116,9 +116,9 @@ Total Admissions =
 COUNT(fact_admissions[admission_id])
 ```
 
-**用途**: 医療サービスのコスト効率性評価
+**Purpose**: Healthcare service cost efficiency evaluation
 
-### 6. トリアージ別パフォーマンス
+### 6. Triage Performance
 
 ```dax
 Triage 1-2 Admissions = 
@@ -137,7 +137,7 @@ DIVIDE(
 
 ## Time Intelligence Measures
 
-### 月別比較 (Month-over-Month)
+### Month-over-Month Comparison
 
 ```dax
 Previous Month ALOS = 
@@ -157,7 +157,7 @@ DIVIDE(
 ) * 100
 ```
 
-### 年度累計 (Year-to-Date)
+### Year-to-Date
 
 ```dax
 YTD Total Admissions = 
@@ -173,7 +173,7 @@ CALCULATE(
 )
 ```
 
-### 移動平均 (Moving Averages)
+### Moving Averages
 
 ```dax
 7-Day Moving Avg Admissions = 
@@ -190,7 +190,7 @@ CALCULATE(
 
 ## Advanced Analytics Measures
 
-### 病床稼働率警告
+### Bed Occupancy Alert
 
 ```dax
 Occupancy Alert = 
@@ -205,7 +205,7 @@ IF(
 )
 ```
 
-### LHD (Local Health District) ランキング
+### LHD (Local Health District) Ranking
 
 ```dax
 LHD Rank by Performance = 
@@ -217,7 +217,7 @@ RANKX(
 )
 ```
 
-### 週末効果分析
+### Weekend Effect Analysis
 
 ```dax
 Weekend Admissions = 
@@ -245,7 +245,7 @@ SWITCH(
     [Bed Occupancy Rate] >= 0.95, 1,  // Critical
     [Bed Occupancy Rate] >= 0.85, 2,  // Warning  
     [Bed Occupancy Rate] >= 0.70, 3,  // Good
-    4  // Low utilisation
+    4  // Low utilization
 )
 
 ED Performance Status = 
@@ -258,20 +258,20 @@ IF(
 )
 ```
 
-## 使用ガイド
+## Implementation Guide
 
-### メジャー適用順序
-1. **ベースメジャー**（Total Admissions, Total Cost等）を先に作成
-2. **比率・平均系**メジャーを作成
-3. **Time Intelligence**メジャーを追加
-4. **Advanced Analytics**メジャーで拡張
+### Measure Application Order
+1. **Base measures** (Total Admissions, Total Cost, etc.) first
+2. **Ratio and average measures** second
+3. **Time Intelligence** measures third
+4. **Advanced Analytics** measures last
 
-### パフォーマンス最適化
-- フィルタコンテキストを活用してメジャーを軽量化
-- SUMMARIZE関数で大きなテーブルの集約を効率化
-- VAR文でサブクエリを再利用
+### Performance Optimization
+- Leverage filter context to optimize measure performance
+- Use SUMMARIZE function for efficient aggregation of large tables
+- Reuse subqueries with VAR statements
 
-### テストケース
-- 各メジャーに対して期待値との比較テスト実施
-- DAX Studioでクエリプラン分析
-- 大量データでのパフォーマンステスト実行
+### Testing Approach
+- Implement expected value comparison tests for each measure
+- Analyze query plans using DAX Studio
+- Execute performance testing with large datasets

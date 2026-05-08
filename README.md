@@ -1,7 +1,7 @@
-# Portfolio Case 1: Power BI × Claude Code
-## NSW Health KPI Dashboard - 4時間開発チャレンジ
+# Power BI × Claude Code - NSW Health Dashboard
+## Enterprise BI Dashboard Built in 4 Hours
 
-> **🎯 コンセプト**: 通常2週間かかるエンタープライズBIダッシュボードを、Claude Codeで4時間で構築
+> **🎯 Concept**: Transform a 2-week enterprise BI dashboard project into a 4-hour development sprint using Claude Code
 
 [![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black)](https://powerbi.microsoft.com/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
@@ -9,17 +9,17 @@
 
 ---
 
-## 📊 プロジェクト概要
+## 📊 Project Overview
 
-NSW Health（ニューサウスウェールズ州保健局）の業務に近似したヘルスケア KPI ダッシュボードを、**Claude Code の AI 支援により超高速開発**。
+Healthcare KPI dashboard modeled after NSW Health (New South Wales Health Department) workflows, demonstrating **ultra-fast development through Claude Code AI assistance**.
 
-### 🎯 目標
-- **開発時間**: 15日間 → **4時間** (97%削減)
-- **データ規模**: 200,000件の入院記録、2年分
-- **技術品質**: Production-ready, Performance-optimized
-- **業界準拠**: AIHW標準、NSW Health規格
+### 🎯 Objectives
+- **Development Time**: 15 days → **4 hours** (97% reduction)
+- **Data Scale**: 200,000 admission records across 2 years
+- **Technical Quality**: Production-ready, Performance-optimized
+- **Industry Compliance**: AIHW standards, NSW Health specifications
 
-### 💡 技術スタック
+### 💡 Technical Stack
 ```
 Data Layer:    Python (Faker + Pandas) → CSV
 Model Layer:   Power BI (Star Schema + DAX)
@@ -29,22 +29,22 @@ AI Assistant: Claude Code (Architecture + Implementation)
 
 ---
 
-## 🏥 ダッシュボード仕様
+## 🏥 Dashboard Specifications
 
 ### Core KPIs
-- **🛏️ 病床稼働率**: リソース使用効率 (目標: 80-90%)
-- **📅 平均在院日数 (ALOS)**: 治療効率指標
-- **⏱️ ED待ち時間中央値**: 救急医療即応性
-- **✅ 4時間ルール達成率**: NSW Health政策準拠 (目標: 90%+)
-- **💰 1入院当たりコスト**: コスト効率性
+- **🛏️ Bed Occupancy Rate**: Resource utilization efficiency (target: 80-90%)
+- **📅 Average Length of Stay (ALOS)**: Treatment efficiency indicator
+- **⏱️ ED Wait Time Median**: Emergency medical responsiveness
+- **✅ 4-Hour Rule Compliance**: NSW Health policy adherence (target: 90%+)
+- **💰 Cost per Admission**: Cost efficiency metric
 
 ### Dashboard Pages
-1. **Executive Summary** - 経営陣向けハイレベル overview
-2. **ED Performance** - 救急部門パフォーマンス詳細
-3. **Ward & Bed Management** - 病棟・病床管理
-4. **Cost Analysis** - コスト分析とトレンド
+1. **Executive Summary** - C-suite high-level overview
+2. **ED Performance** - Emergency department performance details
+3. **Ward & Bed Management** - Ward and bed management insights
+4. **Cost Analysis** - Cost analysis and trending
 
-### データ構造 (Star Schema)
+### Data Structure (Star Schema)
 ```
 fact_admissions (Fact Table)
 ├── admission_id, patient_id, admission_date, discharge_date
@@ -52,124 +52,127 @@ fact_admissions (Fact Table)
 └── Links to: dim_ward, dim_date, dim_patient
 
 Dimension Tables:
-├── dim_ward: 40wards × 10hospitals × 5LHDs
+├── dim_ward: 40 wards × 10 hospitals × 5 LHDs
 ├── dim_date: FY2024-25 to FY2025-26 (Financial year: Jul-Jun)
 └── dim_patient: 50K patients with demographics
 ```
 
 ---
 
-## 🚀 クイックスタート
+## 🚀 Quick Start
 
-### 1. リポジトリクローン
+### 1. Clone Repository
 ```bash
-git clone https://github.com/[username]/portfolio-case1-powerbi.git
-cd portfolio-case1-powerbi
+git clone https://github.com/yujiyamane/powerbi-claude-health.git
+cd powerbi-claude-health
 ```
 
-### 2. 依存関係インストール
+### 2. Install Dependencies
 ```bash
 pip install pandas numpy faker python-dateutil
 ```
 
-### 3. ダミーデータ生成
+### 3. Generate Dummy Data
 ```bash
 cd data
 python generate_data.py
 ```
 
-出力される CSV ファイル:
-- `output/fact_admissions.csv` (200K records)
-- `output/dim_ward.csv` (40 wards)
-- `output/dim_date.csv` (731 days)
-- `output/dim_patient.csv` (50K patients)
+Generated CSV files:
+- `fact_admissions.csv` (200K records)
+- `dim_ward.csv` (40 wards)
+- `dim_date.csv` (730 days)
+- `dim_patient.csv` (50K patients)
 
-### 4. Power BI セットアップ
-1. Power BI Desktop を開く
-2. 「データを取得」→「テキスト/CSV」
-3. `data/output/` フォルダから4つのCSVファイルをインポート
-4. 「モデル」タブでリレーションシップ設定:
+### 4. Power BI Setup
+1. Open Power BI Desktop
+2. Get Data → Text/CSV
+3. Import the 4 CSV files from `data/` folder
+4. In Model tab, configure relationships:
    ```
    fact_admissions[ward_id] → dim_ward[ward_id]
    fact_admissions[patient_id] → dim_patient[patient_id]  
    fact_admissions[admission_date] → dim_date[full_date]
    ```
-5. [`docs/dax_measures.md`](docs/dax_measures.md) のDAX measureを作成
-6. ダッシュボードページ構築
+5. Create DAX measures from [`docs/dax_measures.md`](docs/dax_measures.md)
+6. Build dashboard pages
 
 ---
 
-## 📁 ファイル構成
+## 📁 File Structure
 
 ```
-portfolio-case1-powerbi/
-├── 📄 README.md                    # プロジェクト概要
+powerbi-claude-health/
+├── 📄 README.md                    # Project overview
 ├── 📁 data/
-│   ├── 🐍 generate_data.py         # ダミーデータ生成スクリプト
-│   └── 📁 output/                  # 生成されたCSVファイル
+│   ├── 🐍 generate_data.py         # Data generation script
+│   ├── 📊 fact_admissions.csv      # Generated admission data
+│   ├── 📊 dim_ward.csv            # Ward dimension
+│   ├── 📊 dim_date.csv            # Date dimension
+│   └── 📊 dim_patient.csv         # Patient dimension
 ├── 📁 docs/
-│   ├── 📊 dax_measures.md          # DAX measure定義集
-│   ├── ⚡ before_after.md          # Claude Code導入効果
-│   └── 💬 prompt_log.md            # AI プロンプト履歴
-└── 📁 powerbi/                     # Power BI ファイル (*.pbix)
+│   ├── 📊 dax_measures.md          # DAX measure definitions
+│   ├── ⚡ before_after.md          # Claude Code impact analysis
+│   └── 💬 prompt_log.md            # AI prompt engineering log
+└── 📁 powerbi/                     # Power BI files (*.pbix)
 ```
 
 ---
 
-## 🎯 Claude Code 活用ポイント
+## 🎯 Claude Code Success Factors
 
-### ✅ 成功要因
+### ✅ Key Success Elements
 
-#### 1. **ドメイン知識の即座活用**
+#### 1. **Instant Domain Expertise Application**
 ```
-Prompt: "NSW Health業務理解を前提に、AIHW標準準拠のKPI設計"
-Result: オーストラリア医療業界標準を即座に適用
-```
-
-#### 2. **Performance-First アプローチ**
-```
-Prompt: "200K records対応、Production-ready DAX measures"
-Result: DIVIDE関数、Variable活用、Filter context最適化
+Prompt: "Design KPIs based on NSW Health workflows with AIHW standard compliance"
+Result: Immediate application of Australian healthcare industry standards
 ```
 
-#### 3. **段階的詳細化戦略**
+#### 2. **Performance-First Approach**
 ```
-Session 1: 要件定義 → アーキテクチャ設計
-Session 2: データ生成 → 品質検証  
-Session 3: DAX開発 → パフォーマンス最適化
-Session 4: UI/UX設計 → Testing
+Prompt: "Production-ready DAX measures for 200K records dataset"
+Result: DIVIDE functions, Variable usage, Filter context optimization
 ```
 
-### 📈 効果測定
+#### 3. **Progressive Refinement Strategy**
+```
+Session 1: Requirements definition → Architecture design
+Session 2: Data generation → Quality validation  
+Session 3: DAX development → Performance optimization
+Session 4: UI/UX design → Testing
+```
 
-| 指標 | 従来手法 | Claude Code | 改善率 |
-|------|---------|-------------|--------|
-| **開発時間** | 15日 | 4時間 | **97%削減** |
-| **コード品質** | 6/10 | 9/10 | **+50%** |
-| **ドキュメント** | 4/10 | 9/10 | **+125%** |
-| **学習効果** | 低 | 高 | **+200%** |
+### 📈 Impact Measurement
+
+| Metric | Traditional | Claude Code | Improvement |
+|--------|-------------|-------------|-------------|
+| **Development Time** | 15 days | 4 hours | **97% reduction** |
+| **Code Quality** | 6/10 | 9/10 | **+50%** |
+| **Documentation** | 4/10 | 9/10 | **+125%** |
+| **Learning Effect** | Low | High | **+200%** |
 
 ---
 
-## 🧪 データ品質保証
+## 🧪 Data Quality Assurance
 
-### リアリスティックパターン
-- **季節変動**: 冬季（6-8月）のflu seasonによる入院増
-- **曜日効果**: 週末vs平日の入院パターン差
-- **地理的分布**: NSW人口統計に基づくpostcode distribution
-- **Triage分布**: 実際のED triage category比率
+### Realistic Patterns
+- **Seasonal Variation**: Winter flu season (Jun-Aug) admission increases
+- **Day-of-week Effect**: Weekend vs weekday admission pattern differences
+- **Geographic Distribution**: NSW population statistics-based postcode distribution
+- **Triage Distribution**: Realistic ED triage category ratios
 
-### ビジネスルール準拠
-- **4時間ルール**: ED wait time ≤ 240分の分布調整
-- **Financial Year**: 7月開始・6月終了のFY structure
-- **LHD階層**: Hospital → Local Health District → NSW State
-- **Indigenous Status**: NSW統計（3.4%）に基づく分布
+### Business Rule Compliance
+- **4-Hour Rule**: ED wait time ≤ 240 minutes distribution adjustment
+- **Financial Year**: July start, June end FY structure
+- **LHD Hierarchy**: Hospital → Local Health District → NSW State
+- **Indigenous Status**: NSW statistics (3.4%) based distribution
 
 ---
 
 ## 🎨 Dashboard Design Principles
 
-### 1. **User Journey 最適化**
+### 1. **User Journey Optimization**
 ```
 Executive → High-level KPIs → Drill-down capability
 Operations → Detailed metrics → Actionable insights
@@ -190,43 +193,43 @@ Clinical → Patient flow → Resource optimization
 
 ---
 
-## 📚 ドキュメント詳細
+## 📚 Documentation Details
 
-| Document | 目的 | 対象読者 |
-|----------|------|----------|
-| [`dax_measures.md`](docs/dax_measures.md) | DAX measure定義と解説 | BI Developer |
-| [`before_after.md`](docs/before_after.md) | Claude Code導入効果 | Management |
-| [`prompt_log.md`](docs/prompt_log.md) | プロンプト履歴と学習 | AI Engineer |
+| Document | Purpose | Target Audience |
+|----------|---------|-----------------|
+| [`dax_measures.md`](docs/dax_measures.md) | DAX measure definitions and explanations | BI Developer |
+| [`before_after.md`](docs/before_after.md) | Claude Code implementation impact | Management |
+| [`prompt_log.md`](docs/prompt_log.md) | Prompt history and learning insights | AI Engineer |
 
 ---
 
-## 🔧 トラブルシューティング
+## 🔧 Troubleshooting
 
-### よくある問題
+### Common Issues
 
-#### データインポートエラー
+#### Data Import Errors
 ```
 Error: "CSV encoding issue"
-Solution: generate_data.py実行時にUTF-8 encoding確認
+Solution: Ensure UTF-8 encoding when running generate_data.py
 ```
 
-#### DAX Performance問題
+#### DAX Performance Issues
 ```
 Error: "Slow measure calculation"
-Solution: Variable使用、DIVIDE関数でerror handling適用
+Solution: Use Variables, apply DIVIDE functions for error handling
 ```
 
-#### リレーションシップエラー
+#### Relationship Errors
 ```
 Error: "Many-to-many relationship detected"
-Solution: Date tableのunique key確認、cardinality設定
+Solution: Verify Date table unique keys, configure cardinality settings
 ```
 
 ---
 
-## 🚀 次のステップ
+## 🚀 Next Steps
 
-### Phase 2 候補機能
+### Phase 2 Candidate Features
 - **Real-time data integration** (DirectQuery)
 - **Predictive analytics** (Machine Learning)
 - **Mobile app** (Power BI Mobile optimization)
@@ -242,19 +245,19 @@ Solution: Date tableのunique key確認、cardinality設定
 
 ## 🤝 Contributing
 
-このポートフォリオプロジェクトは学習・参考目的です。改善提案や質問は Issues または Pull Requests でお願いします。
+This portfolio project is for learning and reference purposes. Improvement suggestions and questions welcome via Issues or Pull Requests.
 
 ### Development Guidelines
 1. **Branch naming**: `feature/your-feature-name`
 2. **Commit format**: `type: description` (feat, fix, docs, refactor)
-3. **Testing**: 新機能にはdata validation含む
-4. **Documentation**: コード変更時は関連ドキュメント更新
+3. **Testing**: Include data validation for new features
+4. **Documentation**: Update related documentation when changing code
 
 ---
 
 ## 📄 License
 
-MIT License - 詳細は [LICENSE](LICENSE) ファイル参照
+MIT License - See [LICENSE](LICENSE) file for details
 
 ---
 
