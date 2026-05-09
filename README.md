@@ -29,6 +29,25 @@ AI Assistant: Claude Code (Architecture + Implementation)
 
 ---
 
+## 📸 Screenshots
+
+![Executive Summary](screenshots/page1_executive.png)
+*Executive Summary - C-suite high-level overview with key KPIs*
+
+![ED Performance](screenshots/page2_ed.png)
+*Emergency Department Performance - Detailed ED metrics and 4-hour rule compliance*
+
+![Ward & Bed Management](screenshots/page3_ward.png)
+*Ward & Bed Management - Resource utilization and capacity planning*
+
+![Cost Analysis](screenshots/page4_cost.png)
+*Cost Analysis - Financial metrics and cost efficiency trending*
+
+![Demo](screenshots/demo.gif)
+*Interactive Dashboard Demo - Complete workflow demonstration*
+
+---
+
 ## 🏥 Dashboard Specifications
 
 ### Core KPIs
