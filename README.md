@@ -180,8 +180,8 @@ Clinical → Patient flow → Resource optimization
 ```
 
 ### 2. **Color Palette**
-- **Primary**: Statewide Health blue (`#003087`)
-- **Secondary**: Teal (`#009B77`) for positive KPIs
+- **Primary**: Statewide Health blue (`#002664`)
+- **Secondary**: Red (`#C00000`) for positive KPIs
 - **Alert**: Amber (`#F7931E`) and Red (`#E31B23`) for warnings
 - **Neutral**: Grey shades for supporting data
 
