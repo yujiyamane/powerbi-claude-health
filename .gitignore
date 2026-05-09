@@ -101,6 +101,9 @@ venv.bak/
 *.pbix
 *.pbit
 
+# Exception: Include main dashboard file (under 50MB limit)
+!dashboard/Healthcare_KPI.pbix
+
 # Temporary files
 *.tmp
 *.temp
