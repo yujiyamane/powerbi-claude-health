@@ -1,17 +1,19 @@
+<img src="./assets/banner.svg" alt="powerbi-claude-health — statewide healthcare KPI dashboard built with Claude Code" width="100%">
+
 # Power BI × Claude Code - Statewide Health Dashboard
 ## Enterprise BI Dashboard Built in 4 Hours
 
 > **🎯 Concept**: Transform a 2-week enterprise BI dashboard project into a 4-hour development sprint using Claude Code
 
-[![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black)](https://powerbi.microsoft.com/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-FF6B35?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai/claude-code)
+![Power BI](https://img.shields.io/badge/power%20bi-PBIX-235A8C?style=flat-square&labelColor=16324D)
+![Python](https://img.shields.io/badge/python-data%20gen-4E7E62?style=flat-square&labelColor=16324D)
+![License](https://img.shields.io/badge/license-MIT-B58435?style=flat-square&labelColor=16324D)
 
 ---
 
 ## 📊 Project Overview
 
-Healthcare KPI dashboard modeled after Statewide Health (New South Wales Health Department) workflows, demonstrating **ultra-fast development through Claude Code AI assistance**.
+Healthcare KPI dashboard modelled after statewide public-health reporting workflows in Australia, demonstrating **ultra-fast development through Claude Code AI assistance**. All data is synthetic.
 
 ### 🎯 Objectives
 - **Development Time**: 15 days → **4 hours** (97% reduction)
@@ -133,7 +135,11 @@ powerbi-claude-health/
 │   ├── 📊 dax_measures.md          # DAX measure definitions
 │   ├── ⚡ before_after.md          # Claude Code impact analysis
 │   └── 💬 prompt_log.md            # AI prompt engineering log
-└── 📁 powerbi/                     # Power BI files (*.pbix)
+├── 📁 screenshots/                 # Dashboard captures + demo GIF
+├── 📁 dashboard/
+│   └── 📊 Healthcare_KPI.pbix      # Power BI report file
+├── 📁 design/                      # Hokusai banner build pipeline
+└── 📄 LICENSE                      # MIT
 ```
 
 ---
@@ -162,14 +168,17 @@ Session 3: DAX development → Performance optimization
 Session 4: UI/UX design → Testing
 ```
 
-### 📈 Impact Measurement
+### 📈 Verifiable Metrics
 
-| Metric | Traditional | Claude Code | Improvement |
-|--------|-------------|-------------|-------------|
-| **Development Time** | 15 days | 4 hours | **97% reduction** |
-| **Code Quality** | 6/10 | 9/10 | **+50%** |
-| **Documentation** | 4/10 | 9/10 | **+125%** |
-| **Learning Effect** | Low | High | **+200%** |
+| Metric | Value | Evidence |
+|--------|-------|----------|
+| **Elapsed development** | ~4 hours across 2 days | commit log, 2026-05-09 → 2026-05-10 |
+| **Synthetic data volume** | 200,000 admissions · 50,000 patients · 40 wards | [`data/generate_data.py`](data/generate_data.py) (247 lines) |
+| **Dashboard pages** | 4 (Executive / ED / Ward / Cost) | [`dashboard/Healthcare_KPI.pbix`](dashboard/Healthcare_KPI.pbix) |
+| **Documented DAX measures** | full definitions with explanations | [`docs/dax_measures.md`](docs/dax_measures.md) |
+| **Prompt transparency** | complete session log | [`docs/prompt_log.md`](docs/prompt_log.md) |
+
+The "15 days → 4 hours" comparison is an estimate against a typical enterprise delivery cycle for a dashboard of this scope; the 4-hour build time itself is verifiable from the commit history.
 
 ---
 
@@ -295,4 +304,4 @@ MIT License - See [LICENSE](LICENSE) file for details
 
 ---
 
-> 💡 **Key Takeaway**: Claude Code enables **97% development time reduction** while maintaining **enterprise-grade quality**. This project demonstrates AI-human collaboration at its finest for complex BI solutions.
+> 💡 **Key Takeaway**: a dashboard of this scope was delivered in ~4 hours of AI-assisted development — the full prompt log in [`docs/prompt_log.md`](docs/prompt_log.md) shows exactly how.

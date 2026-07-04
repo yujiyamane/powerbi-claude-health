@@ -1,0 +1,10 @@
+{
+  "Width": 1280,
+  "Height": 340,
+  "Kicker": "POWER BI × CLAUDE CODE",
+  "Title": "powerbi-claude-health",
+  "Tagline": "Statewide healthcare KPI dashboard — 200K synthetic records, built in 4 hours",
+  "Hanko": "匠技",
+  "BannerOut": "..\\assets\\banner.svg",
+  "SocialPreviewOut": "..\\assets\\social-preview.png"
+}
