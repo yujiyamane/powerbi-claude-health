@@ -38,8 +38,26 @@ New-Item -ItemType Directory -Force (Split-Path $bannerOut) | Out-Null
 Write-Host "banner.svg -> $bannerOut ($([math]::Round((Get-Item $bannerOut).Length/1KB,1)) KB)"
 
 if ($cfg.ContainsKey('SocialPreviewOut') -and $cfg['SocialPreviewOut']) {
-    if (-not (Test-Path $ResvgPath)) { throw "resvg not found at $ResvgPath" }
+    if (-not (Test-Path $ResvgPath) -and -not (Get-Command $ResvgPath -ErrorAction SilentlyContinue)) {
+        throw "resvg not found at $ResvgPath"
+    }
     $pngOut = Join-Path $PSScriptRoot $cfg['SocialPreviewOut']
-    & $ResvgPath --width 1280 --height 640 --background '#FBF5E6' $bannerOut $pngOut
-    Write-Host "social-preview.png -> $pngOut"
+
+    # resvg scales the banner to fit 1280 width while preserving its own aspect
+    # ratio (it will not stretch to 640 tall), so render at native size first,
+    # then pad onto a 1280x640 canvas — GitHub's recommended social preview size.
+    $bannerPng = [System.IO.Path]::ChangeExtension($pngOut, '.banner-native.png')
+    & $ResvgPath --width $cfg['Width'] --background $tokens['card'] $bannerOut $bannerPng
+
+    Add-Type -AssemblyName System.Drawing
+    $src = [System.Drawing.Bitmap]::new($bannerPng)
+    $canvas = [System.Drawing.Bitmap]::new(1280, 640)
+    $g = [System.Drawing.Graphics]::FromImage($canvas)
+    $g.Clear([System.Drawing.ColorTranslator]::FromHtml($tokens['card']))
+    $g.DrawImage($src, 0, [int]((640 - $src.Height) / 2))
+    $g.Dispose(); $src.Dispose()
+    $canvas.Save($pngOut, [System.Drawing.Imaging.ImageFormat]::Png)
+    $canvas.Dispose()
+    Remove-Item $bannerPng -Force
+    Write-Host "social-preview.png -> $pngOut (1280x640)"
 }
